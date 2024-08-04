@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter with function scheduling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main">
+
+    <h1 class="value">0</h1>
+
+    <div class="buttons">
+        <button class="startbtn">Start</button>
+        <button disabled="true" class="resetbtn">Reset</button>
+        <button disabled="true" class="stopbtn">Stop</button>
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+var mainValue = document.querySelector('.value');
+var startNew = document.querySelector('.startbtn');
+var resetNew = document.querySelector('.resetbtn');
+var stopNew = document.querySelector('.stopbtn');
+
+count=0;
+
+var intervalSetting
+
+startNew.addEventListener(
+    'click',
+    function(){
+       intervalSetting = setInterval(
+            function(){
+                count++;
+                mainValue.innerText = count;
+
+            },500
+        )
+        startNew.disabled=true;
+        stopNew.disabled=false;
+        resetNew.disabled=false;
+    }
+)
+
+stopNew.addEventListener(
+    'click',
+    function(){
+        clearInterval(intervalSetting);
+        
+        startNew.disabled=false;
+        stopNew.disabled=true;
+        resetNew.disabled=false;
+    }
+)
+
+resetNew.addEventListener(
+    'click',
+    function(){
+        stopNew.click();  
+        count=0                  //click() is a javascript function. This line means that resetNew button pe click krne pe stopNew button bhi click ho jaye apne aap so that value pehle stop ho jaaye and then 0 pe reset ho. 
+        mainValue.innerText = count;
+
+        startNew.disabled=false;
+        stopNew.disabled=true;
+        resetNew.disabled=true;
+
+
+    }
+)
+
+
+</script>
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

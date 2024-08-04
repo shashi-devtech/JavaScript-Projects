@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main">
+
+    <div class="left-box">
+        <input onkeyup="getData()" id="left-input1" type="text" placeholder="To">
+        <Textarea onkeyup="getData()"  rows="16" id="left-textarea" placeholder="Message"></Textarea>
+        <input onkeyup="getData()"  id="left-input2" type="text" placeholder="From">
+    </div>
+
+    <div onchange="bgChange()" id="output-box" class="right-box">
+        <h2 onclick="fschangePlus(0)" onclick="fschangeminus(0)" id="right-input1">To:</h2>
+        <p onclick="fschangePlus(1)" onclick="fschangeminus1()" id="right-textarea">Message:</p>
+        <h2 onclick="fschangePlus(2)" onclick="fschangeminus(2)" id="right-input2">From:</h2>
+    </div>
+
+    <div class="placeholder-h2">
+        <h2></h2>
+    </div>
+
+    
+
+</div>
+
+<div class="backgroundcolor-section">
+    <button id="bgchange">BG Color</button>
+    <input onchange="bgChange()" id="color-picker" type="color">
+</div>
+
+<div class="fs-section">
+    <button onclick="fschangePlus()" id="plus">+</button>
+    <input id="font" type="text" value="14">
+    <button onclick="fschangeminus()"id="minus">-</button>
+</div>
+
+
+
+<script>
+
+
+var input1 = document.getElementById('left-input1');
+var output1 = document.getElementById('right-input1');
+
+
+var input2 = document.getElementById('left-textarea');
+var output2 = document.getElementById('right-textarea');
+
+
+var input3 = document.getElementById('left-input2');
+var output3 = document.getElementById('right-input2');
+
+
+// JS for background-color change starts here //
+var bgOutput = document.getElementById('output-box');
+var colorOutput = document.getElementById('color-picker');
+
+var colorOutput1 = document.getElementById('right-input1');
+var colorOutput2 = document.getElementById('right-textarea');
+var colorOutput3 = document.getElementById('right-input2');
+// JS for background-color change ends here //
+
+
+
+// JS for font-size change starts here //
+var fsOutput = document.getElementById('output-box');
+var plusbtn = document.getElementById('plus');
+var minusbtn = document.getElementById('minus');
+var fontValue = document.getElementById('font');
+
+count=14;
+
+
+function getData(){
+    output1.innerText = input1.value;
+    output2.innerText = input2.value;
+    output3.innerText = input3.value;
+}
+
+function bgChange(){
+    bgOutput.style.backgroundColor = colorOutput.value;
+    colorOutput1.style.backgroundColor = colorOutput.value;
+    colorOutput2.style.backgroundColor = colorOutput.value;
+    colorOutput3.style.backgroundColor = colorOutput.value;
+}
+
+function fschangePlus(index){
+    if(count==30) return
+    else{
+    countNew = count++; 
+    output1.style.fontSize = countNew + "px";
+    output2.style.fontSize = countNew + "px";
+    output3.style.fontSize = countNew + "px";
+}
+
+    fontValue.value = count;
+}
+
+function fschangeminus(index){
+    if(count==14) return
+    else{
+    countNew = count--; 
+    output1.style.fontSize = countNew + "px";
+    output2.style.fontSize = countNew + "px";
+    output3.style.fontSize = countNew + "px";
+    }
+
+    fontValue.value = count;
+}
+
+
+</script>
+
+
+    
+</body>
+</html>

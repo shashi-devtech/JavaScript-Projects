@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4-Notes App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <div class="firstbtn">
+        <button class="add">Add Note</button>
+    </div>
+
+
+    <div class="output-div">
+    <!-- <div class="noteFirst">
+            <div class="colorSection">
+                <i class="fa-solid fa-pen-to-square editIcon"></i>
+                <i class="fa-solid fa-trash-can deleteNote"></i>
+            </div>
+
+            <div class="text">
+                <textarea name="" id="" placeholder="Write Your Note Here"></textarea>
+            </div>
+
+        </div> -->
+    </div>
+
+
+
+
+<script>
+
+var addButton = document.querySelector('.add');
+var clickOutput = document.querySelector('.output-div');
+var finalInput = document.querySelector('.inptext');
+
+
+addButton.addEventListener(
+    'click',
+    function(){
+        var newDiv = document.createElement('div');
+
+        newDiv.innerHTML = `<div class="noteFirst">
+            <div class="colorSection">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-trash-can deleteNote"></i>
+            </div>
+
+            <div class="text">
+                <textarea name="" id="" placeholder="Write Your Note Here"></textarea>
+            </div>
+
+        </div>`
+
+        clickOutput.appendChild(newDiv);    
+
+        newDiv.querySelector('.deleteNote').addEventListener(
+            'click',
+            function(){
+                newDiv.remove();
+            }
+        )
+
+
+    }
+)
+
+
+</script>
+
+</body>
+</html>

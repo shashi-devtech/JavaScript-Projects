@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5-Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main">
+
+    <div class="bottomImages">
+        <div class="img">
+            <img class="img2" onmouseenter="changeImg(this)" src="images/city5.jpg" alt="">
+        </div>
+        <div class="img">
+            <img class="img2" onmouseenter="changeImg(this)" src="images/city3.jpg" alt="">
+        </div>
+        <div class="img">
+            <img class="img2" onmouseenter="changeImg(this)" src="images/city4.webp" alt="">
+        </div>
+        <div class="img">
+            <img class="img2" onmouseenter="changeImg(this)" src="images/city2.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="mainImg">
+        <img class="bigImage" src="images/city1.jpg" alt="">
+    </div>
+
+
+</div>
+
+
+<script>
+
+var mainImageBox = document.querySelector('.bigImage');
+
+console.log(mainImageBox.src)
+
+
+function changeImg(allimages){
+    mainImageBox.src = allimages.src;
+}
+
+</script>
+    
+</body>
+</html>

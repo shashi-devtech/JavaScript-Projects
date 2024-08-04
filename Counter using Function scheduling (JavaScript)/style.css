@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #1F8762;
+}
+
+.main{
+    background-color: rgb(239, 235, 235);
+    width: 450px;
+    height: 300px;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 5px;
+    border: 5px rgb(200, 200, 200) solid;
+}
+
+.value{
+    color: black;
+    /* border: 1px red solid; */
+    text-align: center;
+    padding: 30px;
+    font-size: 60px;
+    margin-top: 40px;
+}
+
+.buttons{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.startbtn, .resetbtn, .stopbtn{
+    padding: 7px;
+    width: 80px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.startbtn{
+    background-color: rgb(140, 205, 114);
+    color: darkgreen;
+    border: 2px rgb(63, 181, 63) solid;
+}
+
+.resetbtn{
+    background-color: rgb(114, 193, 205);
+    color: darkblue;
+    border: 2px rgb(104, 151, 198) solid;
+}
+
+.stopbtn{
+    background-color: #f65e65;
+    color: rgb(136, 18, 18);
+    border: 2px rgb(202, 62, 55) solid;
+}
+
+.startbtn:hover{
+    transform: scale(1.2);
+}
+
+.resetbtn:hover{
+    transform: scale(1.2);
+}
+
+.stopbtn:hover{
+    transform: scale(1.2);
+}

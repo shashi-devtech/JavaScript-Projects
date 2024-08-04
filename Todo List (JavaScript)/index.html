@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1-Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main">
+
+    <h1 class="heading">Todo-List</h1>
+
+    <input class="inp" type="text">
+
+    <div class="list-div">
+        <ul class="ul-list" >
+            <!-- <li>
+                <div class="spanText">Task1</div>
+                <button class="remBtn">Remove</button>
+            </li> -->
+        </ul>
+    </div>
+
+</div>
+
+
+
+<script>
+
+var inputBox = document.querySelector('.inp')
+var newulList = document.querySelector('.ul-list')
+
+
+inputBox.addEventListener(
+    'keyup',
+    function(e){
+        if(e.key=="Enter" && inputBox.value != ""){
+            var List = document.createElement('li');        //IMPORTANT TO STORE NEWLY CREATED ELEMENT IN A VARIABLE. IF NOT THEN: only first clicked remove button deleted the respective list. But on clicking another remove button of another li then it was not getting deleted because created li (List) was not given var with its while creating it as a new element in this line//
+
+            List.innerHTML = `<div class="spanText">${inputBox.value}</div>
+                <button class="remBtn">Remove</button>`
+
+                newulList.appendChild(List);
+                
+
+                List.querySelector('.remBtn').addEventListener(
+                    'click',
+                    function(){
+                        List.remove();
+                    }
+                )
+
+                List.querySelector('.spanText').addEventListener(
+                    'click',
+                    function(){
+                        List.classList.toggle('done');
+                    }
+                )
+
+
+                inputBox.value= "";
+        }
+        
+    }
+)
+
+</script>
+
+
+    
+</body>
+</html>
